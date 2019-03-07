@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function c2f() {
+	d = document.forms["temp"]["degrees"].value;
+	if (d == "" || isNaN(d)) {
+		alert("Please enter a number");
+		return false;
+	}
+	f = (d * 9/5) + 32;
+	document.getElementById("result").innerHTML=d+"&#0176;C = "+f+"&#0176;F";
+	alert(d + " degrees Celsius is " + f + " degrees Fahrenheit. Do another?");
+}
+function f2c() {
+	d = document.forms["temp"]["degrees"].value;
+	if (d == "" || isNaN(d)) {
+		alert("Please enter a number");
+		return false;
+	}
+	c = (d - 32) * 5/9;
+	document.getElementById("result").innerHTML=d+"&#0176;F = "+c+"&#0176;C";
+	alert(d + " degrees Fahrenheit is " + c + " degrees Celsius. Do another?");
+}
+</script>
+<meta charset="UTF-8">
+<title>Convert between Fahrenheit and Celsius</title>
+</head>
+<body>
+<h1>Temperature Converter - Fahrenheit to Celsius or Celsius to Fahrenheit</h1>
+Enter the temperature in degrees Fahrenheit or Celsius to convert:
+<form name = temp>
+	<input type="text" name="degrees" size="6">
+	<button onclick="c2f();">&#0176;C to &#0176;F</button>
+	<button onclick="f2c();">&#0176;F to &#0176;C</button>
+</form>
+<br><br>
+<p id=result></p>
+
+</body>
+</html>
